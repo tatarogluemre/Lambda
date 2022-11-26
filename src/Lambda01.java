@@ -112,7 +112,7 @@ public class Lambda01 {
     }
     public static boolean cift(int a){
 
-        return a%2==0;
+        return a % 2==0;
     }
 
 
