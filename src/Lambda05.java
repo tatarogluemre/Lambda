@@ -9,7 +9,10 @@ public class Lambda05 {
         System.out.println(toplaCift(6));
         System.out.println(ilkXTekTopla(6));
         print2Kuvveti(4);
-
+        System.out.println();
+        usYaz(2,4);
+        System.out.println();
+        System.out.println(faktoriyel(5));
     }
 
     //TASK 01 --> Structured Programming ve Functional Programming ile 1'den x'e kadar (x dahil) tamsayilari toplayan
@@ -65,19 +68,33 @@ public class Lambda05 {
 
     }
 
-  //TASK 04 --> Ilk X pozitif tek tamsayiyi toplayan programi  create ediniz.
+    //TASK 04 --> Ilk X pozitif tek tamsayiyi toplayan programi  create ediniz.
 
     public static int ilkXTekTopla(int x){
 
         return IntStream.iterate(1,t-> t+2).limit(x).sum();
     }
 
-    //TASK 05 --> 2'nin ilk pozitif x kuvvetini ekrana yazdiran programi  create ediniz.
+    //TASK 05 --> 2'nin ilk pozitif x kuvvetini ekrana yazdiran programi create ediniz.
 
     public static void print2Kuvveti(int x){
 
         IntStream.iterate(2,t->t*2).limit(x).forEach(t-> System.out.print(t+" "));
 
     }
+//TASK 06 --> Istenilen bir sayinin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
 
+    public static void usYaz(int sayi ,int us){
+
+        IntStream.iterate(sayi,t-> t*sayi).limit(us).forEach(Lambda01::print);
+
+    }
+//TASK 07 --> Istenilen bir sayinin faktoriyelini hesaplayan programi create ediniz.
+
+    public static int faktoriyel(int x ){
+
+       return IntStream.rangeClosed(1,x).reduce(1,(a,b)-> a*b);
+
+
+    }
 }
